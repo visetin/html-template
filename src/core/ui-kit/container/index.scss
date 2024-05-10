@@ -1,0 +1,30 @@
+@use "../../config/css" as config;
+@use "../../lib/css" as lib;
+
+.uk-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  @each $breakpoint-name, $max-width in config.$container-max-widths {
+    @include lib.bp-up($breakpoint-name) {
+      max-width: $max-width;
+    }
+  }
+}
+
+.uk-container._align_left {
+  margin: unset;
+}
+
+.uk-container._size_sm {
+  @include lib.bp-up(lg) {
+    max-width: 470px;
+  }
+}
+
+.uk-container._size_md {
+  @include lib.bp-up(lg) {
+    max-width: 830px;
+  }
+}
