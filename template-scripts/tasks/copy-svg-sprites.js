@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import { gulpGlobs } from '../configs/index.js';
 
 async function copySvgSprites(cb) {
-  return gulp.src(`${gulpGlobs.sprites}/**/*`)
+  return gulp.src(`${gulpGlobs.sprites}/**/*`, { encoding: false })
     .pipe(gulp.dest(gulpGlobs.publicSprites))
     .on('end', cb)
     .on('error', cb);
