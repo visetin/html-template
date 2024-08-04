@@ -1,10 +1,13 @@
 ---
-to: <%= path %>/index.pug
+to: <%= path %>/template.pug
 ---
 block variables
-  include ../../core/config/pug/vars
+  -
+    extraBodyTagClasses = [];
 
-include ../../core/lib/pug/index
+-
+  bodyTagClasses = ['app', '<%= name %>', ...extraBodyTagClasses].join(' ');
+
 
 doctype html
 html(lang="ru")
@@ -16,6 +19,8 @@ html(lang="ru")
 
     link(rel="stylesheet", href="css/index.css")
 
-  body.uk-page.<%= prefixedName %>
+  body(class= bodyTagClasses)
+
+    block body
 
     script(src="js/index.js")

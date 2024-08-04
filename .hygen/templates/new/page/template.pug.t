@@ -1,25 +1,20 @@
 ---
-to: <%= path %>/index.pug
+to: <%= path %>/template.pug
 ---
-<% if (layout) { -%>
-extends /layouts/<%= layoutName %>/index.pug
+<% if (useLayout) { -%>
+extends /layouts/<%= layoutName %>/template.pug
 
 append variables
   -
+    extraBodyTagClasses = ['<%= name %>'];
 
 block title
   title <%= name %>
 
-block header
-
 block body
-  .<%= prefixedName %>
 
-block footer
 <% } -%>
-<% if (!layout) { -%>
-include ../../core/lib/pug/index
-
+<% if (!useLayout) { -%>
 doctype html
 html(lang="ru")
   head
@@ -30,9 +25,7 @@ html(lang="ru")
 
     link(rel="stylesheet", href="css/index.css")
 
-  body.uk-page.<%= prefixedName %>
+  body.app.<%= name %>
 
     script(src="js/index.js")
 <% } -%>
-
-

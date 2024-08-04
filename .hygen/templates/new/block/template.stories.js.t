@@ -4,7 +4,7 @@ to: <%= path %>/story/index.stories.js
 import compileTemplate from '../template.pug';
 
 export default {
-  title: '<%= blockName %>',
+  title: '<%= fullName %>',
   tags: ['autodocs'],
   argTypes: {
     contents: { control: 'text' },

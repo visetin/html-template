@@ -2,9 +2,9 @@
 to: <%= path %>/template.pug
 ---
 
-mixin <%= h.changeCase.camel(prefixedName) %>(props)
+mixin <%= h.capitalize(h.changeCase.camel(name)) %>(props = {})
   -
-    const baseClasses = ['<%= prefixedName %>'];
+    const baseClasses = ['<%= name %>'];
     const attrs = {
         class: [...baseClasses]
     };
