@@ -7,7 +7,7 @@ import { gulpGlobs } from '../configs/index.js';
 
 function compileScripts() {
   return rollup({
-    input: `./${gulpGlobs.app}/index.js`,
+    input: `./${gulpGlobs.src}/index.js`,
     plugins: [
       resolve({
         browser: true,

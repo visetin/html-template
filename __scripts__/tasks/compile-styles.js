@@ -16,7 +16,7 @@ async function compileStyles() {
     ? [cssimport(), autoprefixer(), cssnano()]
     : [cssimport()];
 
-  return gulp.src(`${gulpGlobs.app}/*.scss`)
+  return gulp.src(`${gulpGlobs.src}/index.scss`)
     .pipe(sourcemaps.init())
     .pipe(sass.sync({ outputStyle: isProd ? 'compressed' : 'expanded' }))
     .on('error', sass.logError)

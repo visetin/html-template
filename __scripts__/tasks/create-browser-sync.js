@@ -11,7 +11,7 @@ export default function initBrowserSync() {
         extensions: ['html'],
       },
     },
-    startPath: '/map',
+    startPath: '/index',
     open: false,
     ui: {
       port: 9090,

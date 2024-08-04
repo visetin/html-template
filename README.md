@@ -18,9 +18,9 @@ npm run deploy
 Pushes the app build for production to the `build gh-subtree`
 
 ```
-npm run gen:[block|layoit|page]
+npm run gen:[block|layout|page]
 ```
-Generates files structures
+Generates files structure
 ```
 npm run sb:start
 ```
@@ -40,9 +40,9 @@ Runs stylelint for `src/**/*.scss` files
 
 <h2>Available entry points for the app build</h2>
 
-|    Type | Filename                  |
-|--------:|---------------------------|
-| scripts | `src/app/index.js`        |
-|  styles | `src/app/index.scss`      |
-|   pages | `src/pages/**/*.pug`      |
-|  assets | `src/core/assets/**/*.*`  |
+|    Type | Filename                 |
+|--------:|--------------------------|
+| scripts | `src/index.js`           |
+|  styles | `src/index.scss`         |
+|   pages | `src/pages/**/*.pug`     |
+|  assets | `src/core/assets/**/*.*` |
