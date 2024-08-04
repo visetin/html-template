@@ -1,3 +1,5 @@
-import app from './app.js';
+const app = () => {
+  console.log('init app');
+};
 
-document.addEventListener('DOMContentLoaded', app);
+export default app;
