@@ -1,7 +1,7 @@
 {
-  "name": "js-mpa-template",
-  "description": "A template for creating a front-end for a multi-page application.",
-  "version": "0.0.1",
+  "name": "simple-frontend-template",
+  "description": "A template for creating a front-end without frameworks",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "start": "npx gulp && npx gulp watch",
@@ -19,16 +19,15 @@
     "stylelint:check": "npx stylelint \"src/**/*.scss\"",
     "stylelint:fix": "npx stylelint --fix \"src/**/*.scss\""
   },
-  "author": "Polina Stopina",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/visetin/js-mpa-template"
+    "url": "git+https://github.com/visetin/simple-frontend-template"
   },
   "bugs": {
-    "url": "https://github.com/visetin/js-mpa-template/issues"
+    "url": "https://github.com/visetin/simple-frontend-template/issues"
   },
-  "homepage": "https://github.com/visetin/js-mpa-template#readme",
+  "homepage": "https://github.com/visetin/simple-frontend-template#readme",
   "browserslist": {
     "production": [
       ">0.2%",
