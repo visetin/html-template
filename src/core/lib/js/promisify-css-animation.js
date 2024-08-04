@@ -1,21 +1,24 @@
 /**
  * @param {HTMLElement} element
- * @param {string[]} animations
+ * @param {string[]} cssClasses
  * @return {Promise<HTMLElement>}
  *
  * @example
- * const foo = document.querySelector('.foo');
- * promisifyCssAnimation(el, ['fade-out'])
+ * promisifyCssAnimation(document.querySelector('.foo'), ['fade-out'])
  *   .then((el) => { el.remove(); })
  *   .catch(console.error))
  */
-const promisifyCssAnimation = (element, animations) => {
-  return new Promise((resolve) => {
-    element.classList.add(...animations);
+const promisifyCssAnimation = (element, cssClasses) => {
+  return new Promise((resolve, reject) => {
+    if (!element) {
+      reject(new Error('Element not found'));
+    }
+
+    element.classList.add(...cssClasses);
 
     const onAnimationEnd = (event) => {
       event.stopPropagation();
-      element.classList.remove(...animations);
+      element.classList.remove(...cssClasses);
 
       resolve(element);
     };

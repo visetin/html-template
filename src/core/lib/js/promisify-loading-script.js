@@ -4,9 +4,8 @@
  *
  * @example
  * promisifyLoadingScript('/foo.js')
- *  .then((script) => { console.log(script.src) })
+ *  .then((scriptEl) => { scriptEl.remove() })
  *  .catch(console.error)
- *
  */
 function promisifyLoadingScript(src) {
   return new Promise((resolve, reject) => {
@@ -16,8 +15,9 @@ function promisifyLoadingScript(src) {
     script.onload = () => {
       resolve(script);
     };
+
     script.onerror = () => {
-      reject(new Error(`Script load error: ${src}`));
+      reject(new Error(`Error loading script ${src}`));
     };
 
     document.getElementsByTagName('head')[0].appendChild(script);

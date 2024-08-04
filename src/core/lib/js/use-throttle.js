@@ -1,8 +1,8 @@
 /**
- * @param { function } callee
+ * @param { function(*) } callee
  * @param { number } timeoutMs
  *
- * @return { function }
+ * @return { function(*) }
  */
 const throttle = (callee, timeoutMs) => {
   let timer = null;
