@@ -22,12 +22,12 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/visetin/simple-frontend-template"
+    "url": "git+https://github.com/visetin/html-template"
   },
   "bugs": {
-    "url": "https://github.com/visetin/simple-frontend-template/issues"
+    "url": "https://github.com/visetin/html-template/issues"
   },
-  "homepage": "https://github.com/visetin/simple-frontend-template#readme",
+  "homepage": "https://github.com/visetin/html-template#readme",
   "browserslist": {
     "production": [
       ">0.2%",
