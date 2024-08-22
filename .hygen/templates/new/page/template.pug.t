@@ -1,5 +1,5 @@
 ---
-to: <%= path %>/template.pug
+to: <%= path %>/index.pug
 ---
 <% if (useLayout) { -%>
 extends /layouts/<%= layoutName %>/template.pug

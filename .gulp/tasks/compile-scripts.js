@@ -3,11 +3,11 @@ import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
 import terser from '@rollup/plugin-terser';
-import { gulpGlobs } from '../configs/index.js';
+import { globs } from '../const/index.js';
 
 function compileScripts() {
   return rollup({
-    input: `./${gulpGlobs.src}/index.js`,
+    input: `./${globs.src}/index.js`,
     plugins: [
       resolve({
         browser: true,
@@ -20,7 +20,7 @@ function compileScripts() {
   })
     .then((bundle) => {
       return bundle.write({
-        file: `./${gulpGlobs.publicScripts}/index.js`,
+        file: `./${globs.publicScripts}/index.js`,
         format: 'iife',
         name: 'app',
         sourcemap: true,

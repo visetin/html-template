@@ -1,5 +1,5 @@
 import gulp from 'gulp';
-import { gulpGlobs } from '../configs/index.js';
+import { globs } from '../const/index.js';
 
 import {
   buildCleanSvgSprites,
@@ -20,43 +20,43 @@ const reloadBrowser = browserSyncInstance.reload;
 function runWatchers() {
   gulp.watch(
     [
-      `${gulpGlobs.src}/**/*.js`,
-      `!${gulpGlobs.src}/**/*.stories.js`,
+      `${globs.src}/**/*.js`,
+      `!${globs.src}/**/*.stories.js`,
     ],
     compileScripts,
   ).on('change', reloadBrowser);
 
   gulp.watch(
     [
-      `${gulpGlobs.src}/**/*.pug`,
+      `${globs.src}/**/*.pug`,
     ],
     compileTemplates,
   ).on('change', reloadBrowser);
 
   gulp.watch(
     [
-      `${gulpGlobs.src}/**/*.scss`,
+      `${globs.src}/**/*.scss`,
     ],
     compileStyles,
   ).on('change', reloadBrowser);
 
   gulp.watch(
     [
-      `${gulpGlobs.images}/**/*`,
+      `${globs.images}/**/*`,
     ],
     copyImages,
   ).on('change', reloadBrowser);
 
   gulp.watch(
     [
-      `${gulpGlobs.otherAssets}/**/*`,
+      `${globs.otherAssets}/**/*`,
     ],
     copyOtherAssets,
   ).on('change', reloadBrowser);
 
   gulp.watch(
     [
-      `${gulpGlobs.sprites}/**/*`,
+      `${globs.sprites}/**/*`,
     ],
     gulp.series(
       copySvgSprites,
@@ -69,7 +69,7 @@ function runWatchers() {
 
   gulp.watch(
     [
-      `${gulpGlobs.fonts}/**/*`,
+      `${globs.fonts}/**/*`,
     ],
     copyFonts,
   ).on('change', reloadBrowser);

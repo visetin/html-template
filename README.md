@@ -44,5 +44,5 @@ Runs stylelint for `src/**/*.scss` files
 |--------:|--------------------------|
 | scripts | `src/index.js`           |
 |  styles | `src/index.scss`         |
-|   pages | `src/pages/**/*.pug`     |
+|   pages | `src/pages/**/index.pug` |
 |  assets | `src/core/assets/**/*.*` |

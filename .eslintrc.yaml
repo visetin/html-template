@@ -27,9 +27,7 @@ rules:
     - error
     - argsIgnorePattern: ^_
   import/no-cycle: error
-  import/extensions:
-    - error
-    - ignorePackages
+  import/extensions: 'off'
   import/no-extraneous-dependencies: 'off'
   no-loops/no-loops: error
 overrides:

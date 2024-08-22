@@ -1,3 +1,7 @@
-import app from './app/index.js';
+import demoPage, { mountDemoPage } from './pages/demo-page';
 
-document.addEventListener('DOMContentLoaded', app);
+mountDemoPage();
+
+export {
+  demoPage,
+};

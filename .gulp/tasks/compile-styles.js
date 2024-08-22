@@ -6,7 +6,7 @@ import gulp from 'gulp';
 import gulpSass from 'gulp-sass';
 import postcss from 'gulp-postcss';
 import sourcemaps from 'gulp-sourcemaps';
-import { gulpGlobs } from '../configs/index.js';
+import { globs } from '../const/index.js';
 
 const sass = gulpSass(dartSass);
 
@@ -16,13 +16,13 @@ async function compileStyles() {
     ? [cssimport(), autoprefixer(), cssnano()]
     : [cssimport()];
 
-  return gulp.src(`${gulpGlobs.src}/index.scss`)
+  return gulp.src(`${globs.src}/index.scss`)
     .pipe(sourcemaps.init())
     .pipe(sass.sync({ outputStyle: isProd ? 'compressed' : 'expanded' }))
     .on('error', sass.logError)
     .pipe(postcss(pCssPlugins))
     .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest(gulpGlobs.publicStyles));
+    .pipe(gulp.dest(globs.publicStyles));
 }
 
 export default compileStyles;

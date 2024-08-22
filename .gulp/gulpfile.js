@@ -1,4 +1,4 @@
-import { build } from './__scripts__/flows/index.js';
+import { build } from './flows/index.js';
 
 export {
   buildCleanSvgSprites,
@@ -14,7 +14,7 @@ export {
   prettifyTemplates,
   convertFonts,
   deploy,
-} from './__scripts__/tasks/index.js';
+} from './tasks/index.js';
 
-export { watch } from './__scripts__/flows/index.js';
+export { watch } from './flows/index.js';
 export default build;

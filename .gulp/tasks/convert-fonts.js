@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import ttf2woff from 'gulp-ttf2woff';
 import ttf2woff2 from 'gulp-ttf2woff2';
-import { gulpGlobs } from '../configs/index.js';
+import { globs } from '../const/index.js';
 
 const convertersMap = {
   woff: ttf2woff,
@@ -12,9 +12,9 @@ const convertFontsBuilder = (from, to) => {
   return (cb) => {
     const convert = convertersMap[to];
 
-    return gulp.src(`${gulpGlobs.fontsToConvert}/**/*.${from}`)
+    return gulp.src(`${globs.fontsToConvert}/**/*.${from}`)
       .pipe(convert())
-      .pipe(gulp.dest(gulpGlobs.fonts))
+      .pipe(gulp.dest(globs.fonts))
       .on('end', cb)
       .on('error', cb);
   };

@@ -1,0 +1,9 @@
+@use "../../core/config/css" as config;
+@use "../../core/lib/css" as lib;
+
+.demo-page {
+  &__title {
+    font-size: 40px;
+    text-transform: uppercase;
+  }
+}
