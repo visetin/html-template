@@ -5,7 +5,8 @@
     font-style: normal;
     font-weight: $weight;
     src: local("#{$name}"),
-      url("@/core/assets/fonts/#{$name}/#{$fileName}.woff2") format("woff2"),
-      url("@/core/assets/fonts/#{$name}/#{$fileName}.woff") format("woff");
+      url("../assets/fonts/#{$name}/#{$fileName}.woff2") format("woff2"),
+      url("../assets/fonts/#{$name}/#{$fileName}.woff") format("woff");
+      url("../assets/fonts/#{$name}/#{$fileName}.ttf") format("truetype");
   }
 }
