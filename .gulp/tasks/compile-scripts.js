@@ -9,10 +9,7 @@ function compileScripts() {
   return rollup({
     input: `./${globs.src}/index.js`,
     plugins: [
-      resolve({
-        browser: true,
-        dedupe: ['pug'],
-      }),
+      resolve({ browser: true }),
       commonjs(),
       babel({ exclude: 'node_modules/**', babelHelpers: 'bundled' }),
       (process.env.NODE_ENV === 'production' && terser()),

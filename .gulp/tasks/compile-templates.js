@@ -7,7 +7,7 @@ async function compileTemplates(cb) {
   return gulp.src(`${globs.pages}/**/index.pug`)
     .pipe(rename((path) => {
       // eslint-disable-next-line no-param-reassign
-      path.basename = path.dirname;
+      path.basename = path.dirname.replace('-page', '');
       // eslint-disable-next-line no-param-reassign
       path.dirname = '';
     }))

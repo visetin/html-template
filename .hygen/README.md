@@ -1,1 +1,0 @@
-# [REASON](https://github.com/jondot/hygen/issues/92#issuecomment-1280875870)
