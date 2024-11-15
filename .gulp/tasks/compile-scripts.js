@@ -7,7 +7,7 @@ import { globs } from '../const/index.js';
 
 function compileScripts() {
   return rollup({
-    input: `./${globs.src}/index.js`,
+    input: `./${globs.src}/main.js`,
     plugins: [
       resolve({ browser: true }),
       commonjs(),
@@ -17,7 +17,7 @@ function compileScripts() {
   })
     .then((bundle) => {
       return bundle.write({
-        file: `./${globs.publicScripts}/index.js`,
+        file: `./${globs.publicScripts}/bundle.js`,
         format: 'iife',
         name: 'app',
         sourcemap: true,

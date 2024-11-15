@@ -1,0 +1,16 @@
+@use "../../core/config/css" as config;
+@use "../../core/lib/css" as lib;
+
+.index-page {
+  h1 {
+    font-size: 3em;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+    stroke: blueviolet;
+  }
+}

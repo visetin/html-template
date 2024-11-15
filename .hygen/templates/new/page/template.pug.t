@@ -12,6 +12,7 @@ block title
   title <%= name %>
 
 block body
+  h1 <%= name %>
 
 <% } -%>
 <% if (!useLayout) { -%>
@@ -23,9 +24,10 @@ html(lang="ru")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title <%= name %>
 
-    link(rel="stylesheet", href="css/index.css")
+    link(rel="stylesheet", href="css/styles.css")
 
-  body.app.<%= name %>
+  body.<%= name %>
+    h1 <%= name %>
 
-    script(src="js/index.js")
+    script(src="js/bundle.js")
 <% } -%>

@@ -1,14 +1,14 @@
 import gulp from 'gulp';
 import {
-  buildCleanSvgSprites,
-  buildSvgSprites,
+  buildCleanSvgSprite,
+  buildDefaultSvgSprite,
   clearPublic,
   compileScripts,
   compileStyles,
   compileTemplates,
   copyFonts,
   copyImages,
-  copySvgSprites,
+  copySvgSpritesParts,
   copyOtherAssets,
   prettifyTemplates,
   normalizeStructure,
@@ -24,13 +24,12 @@ const build = gulp.series(
   gulp.parallel(
     copyImages,
     copyFonts,
-    copySvgSprites,
+    copySvgSpritesParts,
     copyOtherAssets,
-    buildCleanSvgSprites,
-    buildSvgSprites,
+    buildCleanSvgSprite,
+    buildDefaultSvgSprite,
   ),
   prettifyTemplates,
-  normalizeStructure,
 );
 
 export default build;

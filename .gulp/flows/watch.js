@@ -2,14 +2,15 @@ import gulp from 'gulp';
 import { globs } from '../const/index.js';
 
 import {
-  buildCleanSvgSprites,
-  buildSvgSprites,
+  normalizeStructure,
+  buildCleanSvgSprite,
+  buildDefaultSvgSprite,
   compileScripts,
   compileStyles,
   compileTemplates,
   copyFonts,
   copyImages,
-  copySvgSprites,
+  copySvgSpritesParts,
   copyOtherAssets,
   runBrowserSync,
   browserSyncInstance,
@@ -56,13 +57,13 @@ function runWatchers() {
 
   gulp.watch(
     [
-      `${globs.sprites}/**/*`,
+      `${globs.sprites}/svg/**/*`,
     ],
     gulp.series(
-      copySvgSprites,
+      copySvgSpritesParts,
       gulp.parallel(
-        buildCleanSvgSprites,
-        buildSvgSprites,
+        buildCleanSvgSprite,
+        buildDefaultSvgSprite,
       ),
     ),
   ).on('change', reloadBrowser);
@@ -75,4 +76,10 @@ function runWatchers() {
   ).on('change', reloadBrowser);
 }
 
-export default gulp.parallel(runBrowserSync, runWatchers);
+export default gulp.series(
+  normalizeStructure,
+  gulp.parallel(
+    runBrowserSync,
+    runWatchers,
+  ),
+);

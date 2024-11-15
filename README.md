@@ -42,7 +42,7 @@ Runs stylelint for `src/**/*.scss` files
 
 |    Type | Filename                 |
 |--------:|--------------------------|
-| scripts | `src/index.js`           |
-|  styles | `src/index.scss`         |
+| scripts | `src/main.js`            |
+|  styles | `src/styles.scss`        |
 |   pages | `src/pages/**/index.pug` |
 |  assets | `src/core/assets/**/*.*` |

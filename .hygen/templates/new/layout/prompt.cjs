@@ -6,9 +6,7 @@ module.exports = {
             name: 'name',
             message: 'What is the layout name? (kebab-case)',
             validate: (answer) => {
-                if (answer !== '') {
-                    return true
-                }
+                return answer !== '';
             },
         },
     ];

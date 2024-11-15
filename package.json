@@ -1,6 +1,6 @@
 {
   "name": "html-template",
-  "description": "A template for creating a static front-end",
+  "description": "A template for creating a html ui",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
@@ -95,6 +95,6 @@
     "stylelint-scss": "^6.3.0"
   },
   "dependencies": {
-    "@csstools/normalize.css": "^12.1.1"
+    "reset-css": "^5.0.2"
   }
 }

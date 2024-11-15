@@ -1,15 +1,15 @@
 import { build } from './flows/index.js';
 
 export {
-  buildCleanSvgSprites,
-  buildSvgSprites,
+  buildCleanSvgSprite,
+  buildDefaultSvgSprite,
   clearPublic,
   compileScripts,
   compileStyles,
   compileTemplates,
   copyFonts,
   copyImages,
-  copySvgSprites,
+  copySvgSpritesParts,
   copyOtherAssets,
   prettifyTemplates,
   convertFonts,

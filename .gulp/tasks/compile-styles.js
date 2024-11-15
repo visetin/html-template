@@ -12,15 +12,18 @@ const sass = gulpSass(dartSass);
 
 async function compileStyles() {
   const isProd = process.env.NODE_ENV === 'production';
-  const pCssPlugins = isProd
+  const postcssPlugins = isProd
     ? [cssimport(), autoprefixer(), cssnano()]
     : [cssimport()];
 
-  return gulp.src(`${globs.src}/index.scss`)
+  return gulp.src(`${globs.src}/styles.scss`)
     .pipe(sourcemaps.init())
-    .pipe(sass.sync({ outputStyle: isProd ? 'compressed' : 'expanded' }))
+    .pipe(sass.sync({
+      includePaths: ['../node_modules'],
+      outputStyle: isProd ? 'compressed' : 'expanded'
+    }))
     .on('error', sass.logError)
-    .pipe(postcss(pCssPlugins))
+    .pipe(postcss(postcssPlugins))
     .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest(globs.publicStyles));
 }

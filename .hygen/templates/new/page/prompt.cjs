@@ -16,9 +16,7 @@ module.exports = {
         name: 'name',
         message: 'What is the page name? (kebab-case)',
         validate: (answer) => {
-            if (answer !== '') {
-                return true
-            }
+          return answer !== '';
         },
       },
       {
@@ -27,9 +25,7 @@ module.exports = {
         message: 'Use a layout?',
         choices: ['Yes', 'No'],
         validate: (answer) => {
-          if (answer !== '') {
-            return true
-          }
+          return answer !== '';
         },
       },
     ];
@@ -54,9 +50,7 @@ module.exports = {
           message: `'What is the layout name?`,
           choices: layouts,
           validate: (answer) => {
-            if (answer !== '') {
-              return true
-            }
+            return answer !== '';
           },
         })
           .then(({ layoutName }) => {

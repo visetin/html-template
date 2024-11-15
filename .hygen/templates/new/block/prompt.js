@@ -1,27 +1,23 @@
-const CATEGORIES = ['ui-kit', 'components'];
+const FOLDERS = ['core/ui', 'widgets'];
 
 module.exports = {
   prompt: ({ inquirer }) => {
     const questions = [
-        {
-            type: 'select',
-            name: 'categoryName',
-            message: 'What is the directory name?',
-            choices: CATEGORIES,
-            validate: (answer) => {
-                if (answer !== '') {
-                    return true
-                }
-            },
+      {
+        type: 'select',
+        name: 'dirName',
+        message: 'What is the directory name?',
+        choices: FOLDERS,
+        validate: (answer) => {
+          return answer !== '';
         },
+      },
       {
         type: 'input',
         name: 'name',
         message: 'What is the block name? (kebab-case)',
           validate: (answer) => {
-              if (answer !== '') {
-                  return true
-              }
+            return answer !== '';
           },
       },
     ];
@@ -29,20 +25,20 @@ module.exports = {
     return inquirer
       .prompt(questions)
       .then(answers => {
-        const { categoryName, name } = answers;
-        const isUiKitCategory = categoryName === 'ui-kit';
-        const fullName = `${categoryName}/${name}`;
-        const path = isUiKitCategory ? `../src/core/${fullName}` : `../src/${fullName}`;
-        const styleConfigPath = isUiKitCategory ? '../../config/css' : '../../core/config/css';
-        const styleLibPath = isUiKitCategory ? '../../lib/css' :  '../../core/lib/css';
+        const { dirName, name } = answers;
+        const isCoreLayer = dirName === 'core/ui';
+        const fullName = `${dirName}/${name}`;
+        const path = `../src/${fullName}`;
+        const styleConfigPath = isCoreLayer ? '../../config/css' : '../../core/config/css';
+        const styleLibPath = isCoreLayer ? '../../lib/css' :  '../../core/lib/css';
 
         return {
-            ...answers,
-            path,
-            name,
-            fullName,
-            styleConfigPath,
-            styleLibPath,
+          ...answers,
+          path,
+          name,
+          fullName,
+          styleConfigPath,
+          styleLibPath,
         }
       });
   },
