@@ -1,12 +1,3 @@
-/**
- * @param {string} src
- * @return {Promise<HTMLScriptElement>}
- *
- * @example
- * promisifyLoadingScript('/foo.js')
- *  .then((scriptEl) => { scriptEl.remove() })
- *  .catch(console.error)
- */
 function promisifyLoadingScript(src) {
   return new Promise((resolve, reject) => {
     const script = document.createElement('script');
@@ -19,8 +10,6 @@ function promisifyLoadingScript(src) {
     script.onerror = () => {
       reject(new Error(`Error loading script ${src}`));
     };
-
-    document.getElementsByTagName('head')[0].appendChild(script);
   });
 }
 

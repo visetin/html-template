@@ -1,9 +1,3 @@
-/**
- * @param { function(*) } callee
- * @param { number } timeoutMs
- *
- * @return { function(*) }
- */
 const useDebounce = (callee, timeoutMs) => {
   return function perform(...args) {
     const previousCall = perform.lastCall;

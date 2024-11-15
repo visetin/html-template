@@ -1,10 +1,4 @@
-/**
- * @param { function(*) } callee
- * @param { number } timeoutMs
- *
- * @return { function(*) }
- */
-const throttle = (callee, timeoutMs) => {
+const useThrottle = (callee, timeoutMs) => {
   let timer = null;
 
   return function perform(...args) {
@@ -19,4 +13,4 @@ const throttle = (callee, timeoutMs) => {
   };
 };
 
-export default throttle;
+export default useThrottle;
